@@ -10,12 +10,12 @@
 <code>apt update</code> //<i>Проверим на наличие обновлений</i><br>
 <code>apt upgrade</code> //<i>Обновим предложенные пакеты</i><br>
 <code>apt install git</code> //<i>Установим Git для копирования программ с гитхаба</i><br>
-<code>git clone https://github.com/FSystem88/Call-Spammer</code> //<i>Скачаем Спамер с гитхаба</i><br>
-<code>sh Call-Spammer/install.sh</code> //<i>Установим Спамер в Termux'e</i><br>
+<code>git clone https://github.com/FSystem88/callspam</code> //<i>Скачаем Спамер с гитхаба</i><br>
+<code>sh callspam/install.sh</code> //<i>Установим Спамер в Termux'e</i><br>
 <a>Перезапустите Termux</a><br>
 <code>callspam phone --name '[имя жертвы]' --text '[текст с жалобой]'</code> //<i>Запустим Спамер с телефоном жертвы</i><br>
 <br>
 <b>Пример:</b><br>
-<code>callspam 79153509908 --name 'Саша' --text 'Деление имущества после смерти родителей'</code><br><br>
+<code>callspam 79991234567 --name 'Саша' --text 'Деление имущества после смерти родителей'</code><br><br>
 Будут вопросы - контакты выше.<br>
 <b>Приятного пользования!</b>
