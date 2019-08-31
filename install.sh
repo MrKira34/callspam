@@ -1,10 +1,13 @@
 #! /bin/sh
 cd
+apt install python
 apt install python3
 apt install python3-pip
 pip3 install requests
 pip3 install colorama
-cho alias callspam="'cd && python3 callspam/spammer.py'">>.bashrc
-echo "\033[37;1;42m G O O D ! \033[0m"
+echo clear>.bashrc
+echo alias callspam-update="'clear && cd && rm -rf spymer && git clone https://github.com/FSystem88/spymer && clear && sh spymer/install.sh'">>.bashrc
+echo alias callspam="'clear && cd && python3 spymer/spammer.py'">>.bashrc
+clear
 cd
-python3 callspam/spammer.py -h
+python3 spymer/spammer.py
