@@ -8,6 +8,7 @@ pip3 install colorama
 echo clear>>.bashrc
 echo alias callspam-update="'clear && cd && rm -rf callspam && git clone https://github.com/FSystem88/callspam && clear && sh callspam/install.sh'">>.bashrc
 echo alias callspam="'clear && cd && python3 callspam/spammer.py'">>.bashrc
-cd
 source .bashrc
+cd
+clear
 python3 callspam/spammer.py
