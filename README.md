@@ -8,7 +8,7 @@
 <b>Кому не жалко копейку на развитие проекта:</b><br>
 http://FSystem88.ru/donate
 <br>
-https://qiwi.com/n/FSYSTEM88
+https://paypal.me/FSystem88
 <br><br>
 # Как уставновить?
 Только на андроид. Тупо следуйте инструкции...<br>
@@ -18,10 +18,10 @@ https://qiwi.com/n/FSYSTEM88
 <code>apt install git</code> //<i>Установим Git для копирования программ с гитхаба</i><br>
 <code>git clone https://github.com/FSystem88/callspam</code> //<i>Скачаем Спамер с гитхаба</i><br>
 <code>sh callspam/install.sh</code> //<i>Установим Спамер в Termux'e</i><br>
-<code>callspam phone --name '[имя жертвы]' --text '[текст с жалобой]'</code> //<i>Запустим Спамер с телефоном жертвы</i><br>
+<code>callspam phone --text '[текст с жалобой]'</code> //<i>Запустим Спамер с телефоном жертвы</i><br>
 <br>
 <b>Пример:</b><br>
-<code>callspam 89991234455 --name 'Вика' --text 'Развод и распил имущества'</code><br><br>
+<code>callspam 89991234455 --text 'Развод и распил имущества'</code><br><br>
 Будут вопросы - контакты выше.<br>
 <b>Приятного пользования!</b>
 <br><br>
