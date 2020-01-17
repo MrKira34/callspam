@@ -1,4 +1,4 @@
-# Call Spammer
+# Call Spammer (DEAD)
 Спамер звонков<br>
 Только для России!<br>
 Связь со мной в <a href="https://t-do.ru/FSystem88">Telegram</a> или <a href="https://vk.com/fsys88">Вконтакте</a><br>
